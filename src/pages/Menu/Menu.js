@@ -1,5 +1,5 @@
 import React from 'react';
-import { scroller } from "react-scroll";
+// import { scroller } from "react-scroll";
 import logopurple from '../../assets/images/logopurple.png';
 import {FaBars}  from 'react-icons/fa'
 import {
@@ -15,27 +15,27 @@ import {
 
 const Navbar = (props, toggle) => {
 
-    const scrollToTop = () => {
-        scroller.scrollTo("topSection", {smooth: true, duration: 3000 });
-    }
+    // const scrollToTop = () => {
+    //     scroller.scrollTo("topSection", {smooth: true, duration: 3000 });
+    // }
 
-    const scrollToAbout = () => {
-        scroller.scrollTo("aboutSection", {smooth: true, duration: 3000 });
-    }
-    const scrollToCorporate = () => {
-        scroller.scrollTo("CorporateSection", {smooth: true, duration: 3000 });
-    }
-    const scrollToTeam= () => {
-        scroller.scrollTo("teamSection", {smooth: true, duration: 3000 });
-    }
-    const scrollToAdvisor = () => {
-        scroller.scrollTo("teamAdvisor", {smooth: true, duration: 3000 });
-    }
+    // const scrollToAbout = () => {
+    //     scroller.scrollTo("aboutSection", {smooth: true, duration: 3000 });
+    // }
+    // const scrollToCorporate = () => {
+    //     scroller.scrollTo("CorporateSection", {smooth: true, duration: 3000 });
+    // }
+    // const scrollToTeam= () => {
+    //     scroller.scrollTo("teamSection", {smooth: true, duration: 3000 });
+    // }
+    // const scrollToAdvisor = () => {
+    //     scroller.scrollTo("teamAdvisor", {smooth: true, duration: 3000 });
+    //}
 
     return (
         <Nav>
             <NavbarContainer>
-                <NavLogo onClick ={scrollToTop} to='/'> <img height={'75px'} src={logopurple} alt="Logo"/> </NavLogo>
+                <NavLogo to='/'> <img height={'75px'} src={logopurple} alt="Logo"/> </NavLogo>
                 <MobileIcon 
                     // onClick={showDrawer}
                 >
