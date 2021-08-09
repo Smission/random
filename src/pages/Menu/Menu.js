@@ -1,6 +1,7 @@
-import React from 'react';
-// import { scroller } from "react-scroll";
+import React, {useState} from 'react';
+import { scroller } from "react-scroll";
 import logopurple from '../../assets/images/logopurple.png';
+import {Drawer} from '@material-ui/core';
 import {FaBars}  from 'react-icons/fa'
 import {
     Nav, 
@@ -13,38 +14,40 @@ import {
 } from './MenuElements'
 
 
-const Navbar = (props, toggle) => {
+const Navbar = () => {
+    const [mobileSidebarVisible, setMobileSidebarVisible]= useState(false);
 
-    // const scrollToTop = () => {
-    //     scroller.scrollTo("topSection", {smooth: true, duration: 3000 });
-    // }
+    const scrollToTop = () => {
+        scroller.scrollTo("topSection", {smooth: true, duration: 3000 });
+        setMobileSidebarVisible(false);
+    }
 
-    // const scrollToAbout = () => {
-    //     scroller.scrollTo("aboutSection", {smooth: true, duration: 3000 });
-    // }
-    // const scrollToCorporate = () => {
-    //     scroller.scrollTo("CorporateSection", {smooth: true, duration: 3000 });
-    // }
-    // const scrollToTeam= () => {
-    //     scroller.scrollTo("teamSection", {smooth: true, duration: 3000 });
-    // }
-    // const scrollToAdvisor = () => {
-    //     scroller.scrollTo("teamAdvisor", {smooth: true, duration: 3000 });
-    //}
+    const scrollToAbout = () => {
+        scroller.scrollTo("aboutSection", {smooth: true, duration: 3000 });
+        setMobileSidebarVisible(false);
+    }
+    const scrollToContact = () => {
+        scroller.scrollTo("contact", {smooth: true, duration: 3000 });
+        setMobileSidebarVisible(false);
+    }
+
+    const scrollToBlog= () => {
+        setMobileSidebarVisible(false);
+    }
 
     return (
         <Nav>
             <NavbarContainer>
-                <NavLogo to='/'> <img height={'75px'} src={logopurple} alt="Logo"/> </NavLogo>
+                <NavLogo to='/'> <img height={'75px'} onClick ={scrollToTop}  src={logopurple} alt="Logo"/> </NavLogo>
                 <MobileIcon 
-                    // onClick={showDrawer}
+                    onClick={()=>{setMobileSidebarVisible(true)}}
                 >
                     <FaBars />
                 </MobileIcon>
                 <NavMenu>
                     <NavItem>
                         <NavLinks 
-                        // onClick ={scrollToAbout} 
+                        onClick ={scrollToAbout} 
                         to="about"
                         smooth={true}
                         duration={500}
@@ -54,17 +57,35 @@ const Navbar = (props, toggle) => {
                         offset={-80}
                         >About me</NavLinks>
                     </NavItem>
-                    {/* <NavItem>
-                        <NavLinks to="about">Corporate</NavLinks>
-                    </NavItem> */}
                     <NavItem>
-                        <NavLinks  to="contact">Contact</NavLinks>
+                        <NavLinks  onClick ={scrollToContact}  to="contact">Contact</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks  to="contact">Blog</NavLinks>
+                        <NavLinks onClick ={scrollToBlog} to="blog">Blog</NavLinks>
                     </NavItem>
                 </NavMenu>
             </NavbarContainer>
+
+            <Drawer open={mobileSidebarVisible} style={{width: '50%'}} width={'50%'} anchor={'right'} onClose={()=>{setMobileSidebarVisible(false)}}>
+                <NavItem>
+                    <NavLinks 
+                    onClick ={scrollToAbout} 
+                    to="about"
+                    smooth={true}
+                    duration={500}
+                    spy={true} 
+                    exact='true'
+                    activeClass="active"
+                    offset={-80}
+                    >About me</NavLinks>
+                </NavItem>
+                <NavItem>
+                    <NavLinks onClick ={scrollToContact}  to="contact">Contact</NavLinks>
+                </NavItem>
+                <NavItem>
+                    <NavLinks to="contact">Blog</NavLinks>
+                </NavItem>
+            </Drawer>
         </Nav>
     )
 }

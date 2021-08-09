@@ -71,24 +71,8 @@ export const NavMenu = styled.ul`
     }
 `;
 
-export const NavItem = styled.li`
+export const NavItem = styled.div`
     height: 80px;
-    .be-tutor{
-        background-color:#800080;
-        color:black;
-        margin-left:5px;
-        margin-top:20px;
-        height: 40px;
-        font-size:12px !important;
-        border-radius:25px;
-    }
-    .be-tutor2{
-        margin-top:20px;
-        border:1px solid black !important;
-        height: 40px;
-        font-size:12px !important;
-        border-radius:25px;
-    }
 `;
 
 export const NavLinks = styled(LinkS)`
@@ -127,8 +111,3 @@ export const NavBtLink = styled(LinkR)`
         color: #010606;
     }
 `
-
-export const  ModalBottom = styled.div`
-
-`;
-
