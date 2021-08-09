@@ -41,9 +41,7 @@ export const Contact = ()=>{
                         <LinkedinOutlined className='icon-size' onClick={()=>{goToLinkedIn()}}/>
 
                         <GithubOutlined className='icon-size' onClick={()=>{goToGithub()}}/>
-                    </ContainIcons>
                     
-                    <ContainIcons>
                         <TwitterOutlined className='icon-size' onClick={()=>{goToTwitter()}}/>
 
                         <InstagramOutlined className='icon-size' onClick={()=>{goToInstagram()}}/> 

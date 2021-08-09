@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const ContainContact = styled.div`
     background-color: #B69EED;
-    height: 100vh;
+    height: 40vh;
 
     @media screen and (max-width: 960px){
-        height: 250vh !important;
+        height: 75vh !important;
     }
 `;
 
