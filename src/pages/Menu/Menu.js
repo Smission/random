@@ -66,7 +66,7 @@ const Navbar = () => {
                 </NavMenu>
             </NavbarContainer>
 
-            <Drawer open={mobileSidebarVisible} style={{width: '50%'}} width={'50%'} anchor={'right'} onClose={()=>{setMobileSidebarVisible(false)}}>
+            <Drawer open={mobileSidebarVisible} style={{width: '50%'}} anchor={'right'} onClose={()=>{setMobileSidebarVisible(false)}}>
                 <NavItem>
                     <NavLinks 
                     onClick ={scrollToAbout} 
