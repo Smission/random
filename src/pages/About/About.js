@@ -1,6 +1,6 @@
 import React from 'react';
 import { Element} from "react-scroll";
-import MyPicture from '../../assets/images/picture.JPG';
+import MyNewPicture from '../../assets/images/my-new-pic-1.jpg';
 
 import {
     AboutContainer,
@@ -53,7 +53,7 @@ const About = () => {
 
                 <ImgBox>
                     <ImgBoxMini>
-                        <ImgContainer src={MyPicture} alt="MyPic" />
+                        <ImgContainer src={MyNewPicture} alt="MyPic" />
                     </ImgBoxMini>
                 </ImgBox>
                 

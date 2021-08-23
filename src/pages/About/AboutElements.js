@@ -72,8 +72,8 @@ export const ImgBox = styled.div`
     border: 3px solid rgba(25, 61, 120, 0.09);
     box-sizing: border-box;
     @media screen and (max-width: 960px){
-        width: 315px;
-        height: 315px;
+        width: 280px;
+        height: 450px;
         padding-top: 40px;
     }
 `;
@@ -86,8 +86,8 @@ export const ImgBoxMini = styled.div`
     border: 3px solid rgba(25, 61, 120, 0.09);
     box-sizing: border-box;
     @media screen and (max-width: 960px){
-        width: 230px;
-        height: 230px;
+        width:95%;
+        height: 95%;
         border-radius: 50%;
     }
 `;
@@ -98,6 +98,6 @@ export const ImgContainer = styled.img`
     width: 100%;
     height: 100%;
     @media screen and (max-width: 960px){
-        width: 260px;
+        ${'' /* width: 260px; */}
     }
 `;
