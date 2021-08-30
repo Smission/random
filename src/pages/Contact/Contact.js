@@ -50,8 +50,11 @@ export const Contact = ()=>{
                     </ContainIcons>
 
                 </ContainAllIcons>
+
+                <a href='https://www.freepik.com/vectors/man'>Banner on landing created by upklyak - www.freepik.com</a>
                 
                 <BottomText>© 2021, M. Shezi</BottomText>
+
             </ContainContact>
         </Element>
         
