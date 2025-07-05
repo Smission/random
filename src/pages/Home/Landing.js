@@ -1,30 +1,46 @@
 import React from 'react';
-import {Element} from 'react-scroll'
-import Navbar from '../../pages/Menu/Menu';
-import About from '../About/About';
-import Contact from '../Contact/Contact';
-import { WelcomeContainer, Header, WelcomeText, FindText, LandingContainer} from './LandingElements'
+import { 
+    WelcomeContainer, 
+    Header, 
+    WelcomeText, 
+    FindText, 
+    LandingContainer, 
+    CtaButton, 
+    ButtonContainer,
+    Highlight,
+    Subtitle,
+    ContentWrapper
+} from './LandingElements';
+import { Link } from 'react-router-dom';
 
 function LandingPage() {
     return (
-        <Element name="topSection">
-            <LandingContainer >
-                <Navbar/>
-
-                <Header>
-                    <WelcomeContainer>
-                        <WelcomeText> Welcome to Mandlenkosi Shezi's Personal Site</WelcomeText>
-
-                        <FindText> Precision | Dedication | Positivity</FindText>
-                    </WelcomeContainer>
-                </Header>
-
-                <About/>
-
-                <Contact/>
-
-            </LandingContainer>
-        </Element>
+        <LandingContainer>
+            <Header>
+                <WelcomeContainer>
+                    <ContentWrapper>
+                        <WelcomeText>
+                            Hey, I'm <Highlight>Mandlenkosi Shezi</Highlight>.
+                        </WelcomeText>
+                        <Subtitle>
+                            I'm a <strong>Full-Stack Developer</strong> passionate about building scalable systems and solving complex problems.
+                            I write about backend engineering, distributed systems, and occasionally — how life insists on debugging me back.
+                        </Subtitle>
+                        <FindText>
+                            Currently looking for my next challenge. Previously crafted digital experiences at <strong>Scrums.com</strong>.
+                        </FindText>
+                        <ButtonContainer>
+                            <Link to="/about">
+                                <CtaButton>About Me</CtaButton>
+                            </Link>
+                            <Link to="/blog">
+                                <CtaButton>Read My Blog</CtaButton>
+                            </Link>
+                        </ButtonContainer>
+                    </ContentWrapper>
+                </WelcomeContainer>
+            </Header>
+        </LandingContainer>
     );
 }
 

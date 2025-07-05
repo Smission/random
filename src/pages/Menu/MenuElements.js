@@ -76,19 +76,35 @@ export const NavItem = styled.div`
 `;
 
 export const NavLinks = styled(LinkS)`
-    color: black;
+    color: #000;
     display: flex;
     align-items: center;
-    font-weight: bold;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: pointer;
+
+    &.active{
+        color: #6c63ff;
+    }
+`;
+
+export const NavBlogLink = styled(LinkR)`
+    color: #000;
+    display: flex;
+    align-items: center;
     text-decoration: none;
     padding: 0 1rem;
     height: 100%;
     cursor: pointer;
 
     &:hover {
-        transition: all 0.2s ease-in-out;
-        background:#800080;
-        color: white;
+        color: #6c63ff;
+        transition: 0.2s ease-in-out;
+    }
+
+    &.active {
+        color: #6c63ff;
     }
 `;
 
