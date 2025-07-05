@@ -9,7 +9,6 @@ import {
     MobileIcon,
     NavItem,
     NavMenu,
-    NavLinks,
     NavBlogLink
 } from './MenuElements';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaFilePdf, FaExternalLinkAlt, FaAward, FaGraduationCap, FaBriefcase, FaLaptopCode, FaNewspaper, FaReact, FaJs, FaDatabase, FaServer, FaAws, FaCode, FaJava, FaGoogle, FaChartLine, FaChartBar, FaSearch, FaExclamationTriangle } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaExternalLinkAlt, FaAward, FaGraduationCap, FaBriefcase, FaLaptopCode, FaNewspaper, FaReact, FaJs, FaDatabase, FaServer, FaAws, FaCode, FaJava, FaGoogle, FaChartLine, FaChartBar, FaSearch, FaExclamationTriangle } from 'react-icons/fa';
 import { SiTypescript, SiDocker, SiKubernetes, SiMongodb, SiMicrosoftazure, SiRedux } from 'react-icons/si';
 import { FaVuejs } from 'react-icons/fa';
 import { 
@@ -25,7 +25,7 @@ import {
 } from './AboutElements';
 
 const About = () => {
-    const yearsOfExperience = new Date().getFullYear() - 2021;
+    // Experience calculated dynamically based on career start year
     
     return (
         <AboutContainer>
