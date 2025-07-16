@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
+import { markdownToHtml } from '../../utils/markdown';
 import { 
   BlogContainer, 
   BlogHeader, 
@@ -14,6 +15,7 @@ import blogPosts from '../../data/blogPosts.json';
 
 // Import images
 import post1Image from '../../assets/images/post1.JPG';
+import post2Image from '../../assets/images/post2.JPG';
 
 const Post = ({ match, history }) => {
   const [post, setPost] = useState(null);
@@ -58,7 +60,6 @@ const Post = ({ match, history }) => {
     <BlogContainer>
       <article>
         <BlogHeader>
-          {post.id === 1 && <BlogImage src={post1Image} alt={post.title} />}
           <BlogTitle>{post.title}</BlogTitle>
           <BlogDate>{new Date(post.date).toLocaleDateString('en-US', {
             year: 'numeric',
@@ -68,11 +69,27 @@ const Post = ({ match, history }) => {
         </BlogHeader>
         
         {post.coverImage && (
-          <BlogImage 
-            src={post.coverImage} 
-            alt={post.title} 
-            style={{ marginBottom: '2rem' }}
-          />
+          <div style={{
+            width: '100%',
+            maxWidth: '800px',
+            margin: '0 auto 2rem',
+            borderRadius: '8px',
+            overflow: 'hidden',
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+          }}>
+            <img 
+              src={post.id === 1 ? post1Image : post2Image} 
+              alt={post.title}
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block',
+                objectFit: 'cover',
+                maxHeight: post.id === 1 ? '70vh' : '50vh',
+                margin: '0 auto'
+              }}
+            />
+          </div>
         )}
         
         <PostContent>
@@ -100,7 +117,11 @@ const Post = ({ match, history }) => {
                 </pre>
               );
             }
-            return <p key={i} style={{ marginBottom: '1rem', lineHeight: '1.6' }}>{section}</p>;
+            return <p 
+              key={i} 
+              style={{ marginBottom: '1rem', lineHeight: '1.6' }}
+              dangerouslySetInnerHTML={{ __html: markdownToHtml(section) }}
+            />;
           })}
         </PostContent>
         

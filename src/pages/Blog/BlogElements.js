@@ -7,6 +7,8 @@ export const BlogContainer = styled.div`
   color: #000;
   max-width: 1300px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   
   @media screen and (max-width: 1400px) {
     padding: 5rem 50px;
@@ -43,7 +45,29 @@ export const BlogGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 2rem;
-  padding: 0 1rem;
+  padding: 0 1rem 2rem;
+  flex: 1;
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+  
+  /* Custom scrollbar */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
   
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -70,12 +94,23 @@ export const BlogCard = styled.div`
 
 export const BlogImage = styled.img`
   width: 100%;
-  height: 200px;
+  height: ${props => props.className === 'portrait' ? '400px' : '250px'};
   object-fit: cover;
   transition: transform 0.3s ease;
+  border-radius: 8px;
   
   ${BlogCard}:hover & {
-    transform: scale(1.03);
+    transform: scale(1.02);
+  }
+  
+  /* Portrait specific styles */
+  &.portrait {
+    object-position: center;
+  }
+  
+  /* Landscape specific styles */
+  &.landscape {
+    object-position: center 30%;
   }
 `;
 
@@ -138,5 +173,49 @@ export const ReadMoreLink = styled.span`
   
   ${BlogCard}:hover &::after {
     transform: translateX(3px);
+  }
+`;
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+`;
+
+export const PageButton = styled.button`
+  background: ${({ active }) => (active ? '#6c63ff' : 'white')};
+  color: ${({ active }) => (active ? 'white' : '#333')};
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:hover:not(:disabled) {
+    background: ${({ active }) => (active ? '#5a52d3' : '#f5f5f5')};
+    border-color: #999;
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0.4rem 0.8rem;
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
   }
 `;
