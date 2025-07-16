@@ -6,8 +6,7 @@ import {
   BlogHeader, 
   BlogTitle, 
   BlogContent as PostContent,
-  BlogDate,
-  BlogImage
+  BlogDate
 } from './BlogElements';
 
 // Import blog posts
