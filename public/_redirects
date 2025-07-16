@@ -1,9 +1,2 @@
-# Handle all routes - SPA fallback
+# SPA Fallback - Handle all routes
 /*    /index.html    200
-
-# Explicit routes for better caching and clarity
-/about              /index.html    200
-/blog               /index.html    200
-/blog/*             /index.html    200
-/contact            /index.html    200
-/projects           /index.html    200
