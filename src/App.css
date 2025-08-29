@@ -1,5 +1,164 @@
+/* Base app styles */
 .App {
   text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.7;
+  color: #333;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Blog post content styles */
+.blog-content {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #2d3748;
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  margin: 1.5em 0 0.8em;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a202c;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 1.8em 0 0.8em;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin: 1.6em 0 0.8em;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+p {
+  margin: 1.2em 0;
+  line-height: 1.8;
+}
+
+/* Lists */
+ul, ol {
+  margin: 1.2em 0;
+  padding-left: 2em;
+}
+
+li {
+  margin: 0.5em 0;
+  line-height: 1.6;
+}
+
+/* Code block styles */
+.code-block {
+  display: block;
+  max-width: 100%;
+  margin: 2em auto;
+  border-radius: 8px;
+  overflow-x: auto;
+  background: #1e1e1e;
+  padding: 1.2em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 0;
+  background: none;
+  font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  font-size: 0.9em;
+  line-height: 1.6;
+  color: #d4d4d4;
+  white-space: pre;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  tab-size: 2;
+}
+
+.code-block code {
+  display: block;
+  font-family: inherit;
+  white-space: pre;
+  overflow: visible;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: pre;
+  word-break: normal;
+  word-wrap: normal;
+}
+
+.copy-button {
+  position: sticky;
+  left: 100%;
+  transform: translateX(-100%);
+  display: inline-block;
+  margin-bottom: -2em;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 4px 0 4px 0;
+  padding: 4px 8px;
+  font-size: 0.8em;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  z-index: 1;
+}
+
+.copy-button:hover {
+  opacity: 1;
+}
+
+/* Inline code */
+:not(pre) > code {
+  background: #f3f3f3;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9em;
+  color: #e83e8c;
+  white-space: nowrap;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  white-space: pre;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  pre {
+    font-size: 0.8em;
+    padding: 12px;
+  }
+  
+  .blog-content {
+    padding: 0 15px;
+  }
 }
 
 .App-logo {

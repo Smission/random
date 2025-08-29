@@ -91,38 +91,14 @@ const Post = ({ match, history }) => {
           </div>
         )}
         
-        <PostContent>
-          {post.content.split('\n\n').map((section, i) => {
-            if (section.startsWith('# ')) {
-              return <h2 key={i} style={{ margin: '2rem 0 1rem', color: '#333' }}>{section.substring(2)}</h2>;
-            }
-            if (section.startsWith('## ')) {
-              return <h3 key={i} style={{ margin: '1.5rem 0 0.75rem', color: '#444' }}>{section.substring(3)}</h3>;
-            }
-            if (section.startsWith('```')) {
-              const codeContent = section.split('\n').slice(1, -1).join('\n');
-              return (
-                <pre key={i} style={{
-                  background: '#f5f5f5',
-                  padding: '1rem',
-                  borderRadius: '5px',
-                  overflowX: 'auto',
-                  margin: '1.5rem 0',
-                  fontSize: '0.9rem',
-                  lineHeight: '1.5',
-                  fontFamily: 'monospace',
-                }}>
-                  <code>{codeContent}</code>
-                </pre>
-              );
-            }
-            return <p 
-              key={i} 
-              style={{ marginBottom: '1rem', lineHeight: '1.6' }}
-              dangerouslySetInnerHTML={{ __html: markdownToHtml(section) }}
-            />;
-          })}
-        </PostContent>
+        <PostContent
+          dangerouslySetInnerHTML={{ 
+            __html: markdownToHtml(post.content)
+              .replace(/<h2>/g, '<h2 style="margin: 2rem 0 1rem; color: #333">')
+              .replace(/<h3>/g, '<h3 style="margin: 1.5rem 0 0.75rem; color: #444">')
+          }}
+          style={{ lineHeight: '1.6' }}
+        />
         
         <div style={{ marginTop: '3rem', textAlign: 'center' }}>
           <button 

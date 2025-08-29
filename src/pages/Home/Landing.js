@@ -27,7 +27,7 @@ function LandingPage() {
                             I write about backend engineering, distributed systems, and occasionally — how life insists on debugging me back.
                         </Subtitle>
                         <FindText>
-                            Currently looking for my next challenge. Previously crafted digital experiences at <strong>Scrums.com</strong>.
+                            Currently looking for my next challenge. Previously crafted digital experiences at <strong>Scrums.com</strong>, Br.
                         </FindText>
                         <ButtonContainer>
                             <Link to="/about">
