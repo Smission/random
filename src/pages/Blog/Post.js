@@ -12,10 +12,6 @@ import {
 // Import blog posts
 import blogPosts from '../../data/blogPosts.json';
 
-// Import images
-import post1Image from '../../assets/images/post1.JPG';
-import post2Image from '../../assets/images/post2.JPG';
-
 const Post = ({ match, history }) => {
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -77,7 +73,7 @@ const Post = ({ match, history }) => {
             boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
           }}>
             <img 
-              src={post.id === 1 ? post1Image : post2Image} 
+              src={post.coverImage} 
               alt={post.title}
               style={{
                 width: '100%',
@@ -87,6 +83,10 @@ const Post = ({ match, history }) => {
                 maxHeight: post.id === 1 ? '70vh' : '50vh',
                 margin: '0 auto'
               }}
+              // onError={(e) => {
+              //   e.target.onerror = null;
+              //   e.target.src = '/images/post1.JPG'; // Fallback image
+              // }}
             />
           </div>
         )}

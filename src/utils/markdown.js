@@ -8,14 +8,27 @@ const markdownToHtml = (text) => {
   // Handle code blocks with language specification
   result = result.replace(/```(?:([a-z]+)\n)?([\s\S]*?)```/g, (match, lang, code) => {
     const language = lang || '';
-    // Preserve all line breaks and indentation
-    const formattedCode = code
+    // Clean up the code by removing escape slashes
+    const cleanCode = code
+      .replace(/\\"/g, '"')
+      .replace(/\\\\/g, '\\')
+      .replace(/\\([\\`*_{}\[\]()#+\-.!])/g, '$1')
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/\n/g, '<br>')  // Convert newlines to <br> tags
-      .replace(/ /g, '&nbsp;'); // Convert spaces to non-breaking spaces
+      .replace(/>/g, '&gt;');
+    
+    // Split into lines and handle indentation
+    const lines = cleanCode.split('\n');
+    const formattedLines = lines.map(line => {
+      // Replace leading spaces with non-breaking spaces to preserve indentation
+      const leadingSpaces = line.match(/^\s*/)[0];
+      const content = line.substring(leadingSpaces.length);
+      const nbsp = '&nbsp;'.repeat(leadingSpaces.length);
+      return nbsp + content;
+    });
+    
+    // Join lines with <br> tags
+    const formattedCode = formattedLines.join('<br>');
     
     return `
       <div class="code-block">

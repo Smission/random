@@ -20,10 +20,6 @@ import {
 // Import blog posts
 import blogPosts from '../../data/blogPosts.json';
 
-// Import images
-import post1Image from '../../assets/images/post1.JPG';
-import post2Image from '../../assets/images/post2.JPG';
-
 const POSTS_PER_PAGE = 6; // Number of posts per page
 
 const Blog = () => {
@@ -89,9 +85,13 @@ const Blog = () => {
             >
               <BlogCard>
                 <BlogImage 
-                  src={post.id === 1 ? post1Image : post2Image} 
+                  src={post.coverImage} 
                   alt={post.title} 
                   className={post.id === 1 ? 'portrait' : 'landscape'}
+                  // onError={(e) => {
+                  //   e.target.onerror = null; // Prevent infinite loop if fallback also fails
+                  //   e.target.src = '/images/post1.JPG'; // Fallback image
+                  // }}
                 />
                 <BlogContent>
                   <BlogDate>{formatDate(post.date)}</BlogDate>
