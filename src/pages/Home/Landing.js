@@ -23,11 +23,12 @@ function LandingPage() {
                             Hey, I'm <Highlight>Mandlenkosi Shezi</Highlight>.
                         </WelcomeText>
                         <Subtitle>
-                            I'm a <strong>Full-Stack Developer</strong> passionate about building scalable systems and solving complex problems.
+                            I'm a <strong>Software Engineer</strong> passionate about building scalable systems and solving complex problems.
                             I write about backend engineering, distributed systems, and occasionally — how life insists on debugging me back.
                         </Subtitle>
                         <FindText>
-                            Currently looking for my next challenge. Previously crafted digital experiences at <strong>Scrums.com</strong>, Br.
+                            Recently started a new challenge in the crypto industry and actively learning about the Blockchain with a focus on 
+                            staking. Previously crafted digital experiences as a consultant mainly in <strong>Fintech</strong> and <strong>IoT</strong>.
                         </FindText>
                         <ButtonContainer>
                             <Link to="/about">

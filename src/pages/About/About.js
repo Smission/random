@@ -118,6 +118,15 @@ const About = () => {
 
                 <Section>
                     <SectionTitle><FaBriefcase /> Career Journey</SectionTitle>
+
+                    <ExperienceItem>
+                        <ExperienceTitle>Software Engineer Backend</ExperienceTitle>
+                        <ExperienceCompany>Luno (Sept 2025 - present)</ExperienceCompany>
+                        <ExperienceDuration>Johannesburg, South Africa</ExperienceDuration>
+                        <ExperienceDescription>
+                            Working with a team which is mainly responsible for staking products. Actively maintain existing integrations and contribute to the expansion of our staking assets in multiple regions.
+                        </ExperienceDescription>
+                    </ExperienceItem>
                     
                     <ExperienceItem>
                         <ExperienceTitle>Software Engineer</ExperienceTitle>
@@ -225,8 +234,8 @@ const About = () => {
                     </AboutContent>
                     
                     <ContactInfo>
-                        <ContactItem><FaEnvelope /> mandlashezifbi@gmail.com / mandlenkosishezi@icloud.com</ContactItem>
-                        <ContactItem><FaPhone /> +27 69 384 3280</ContactItem>
+                        <ContactItem><FaEnvelope /> mandlashezifbi@gmail.com</ContactItem>
+                        {/* <ContactItem><FaPhone /> +27 69 384 3280</ContactItem> */}
                         <ContactItem><FaMapMarkerAlt /> Johannesburg, South Africa</ContactItem>
                     </ContactInfo>
                     
